@@ -1,9 +1,17 @@
 import './playButton.css'
-function playButton({message,children}){
+function playButton({message,children,onPlay,onPause}){
+     let playing = false;
 
+  function handleClick(e){
+  //  console.log(e);
+   e.stopPropagation();
+   e.preventDefault();
 
-  function handleClick(){
-    console.log({message})
+    if(playing) onPause();
+    
+    else onPlay();
+
+    playing = !playing
   }
 
     return(

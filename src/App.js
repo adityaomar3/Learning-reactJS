@@ -5,7 +5,7 @@ import videos from './data/data'
 function App() {
   
   return (
-    <div className="App">
+    <div className="App" onClick ={()=>alert('PLAY')}>
       <div>Videos</div>
        {
         videos.map(video=><Video
@@ -16,12 +16,21 @@ function App() {
         channel={video.channel} 
         verified={video.verified}
         id = {video.id}
-      ></Video>)
+      >
+      <PlayButton  
+       onPlay ={()=>console.log('PLAY')} 
+       onPause ={()=>console.log('Pause')} >
+       {video.title}
+       </PlayButton>
+        
+      </Video>)
        }
        
        <div style = {{clear:'both'}}>
-       <PlayButton message="hi" >play</PlayButton>
-       <PlayButton message="hi again">play2</PlayButton>
+       {/* here onClick is just a name which we are passing it is actually working on playbutton button tag can declare it onsmash too*/}
+       
+      
+       {/* <PlayButton message="hi again" onClick ={()=>alert('PLAY')}>play2</PlayButton> */}
        </div>
     </div>
   );

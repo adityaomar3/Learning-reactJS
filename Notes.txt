@@ -1,2 +1,4 @@
 components are the function that returns UI
 event handler functions
+difference between lib and framework
+event bubbling: in html if event originates it propogates upto its parent
