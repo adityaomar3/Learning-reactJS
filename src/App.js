@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-
+import PlayButton from './components/playButton';
+import Video from './components/Video';
+import videos from './data/data'
 function App() {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>Videos</div>
+       {
+        videos.map(video=><Video
+        key={video.id} 
+        title={video.title} 
+        views={video.views}
+        time={video.time}
+        channel={video.channel} 
+        verified={video.verified}
+        id = {video.id}
+      ></Video>)
+       }
+       
+       <div style = {{clear:'both'}}>
+       <PlayButton message="hi" >play</PlayButton>
+       <PlayButton message="hi again">play2</PlayButton>
+       </div>
     </div>
   );
 }
 
 export default App;
+// export default videos;

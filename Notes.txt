@@ -1,0 +1,2 @@
+components are the function that returns UI
+event handler functions
