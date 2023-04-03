@@ -1,23 +1,17 @@
 import './Video.css';
 
 function Video({title,id,channel="Coder Dost",views,time,verified,children}) {
-    // let verified = true;
-    // let channelJSX;
-    // if(verified){
-        
-    // }else{
-    //     channelJSX = 
-    // }
-    console.log(id)
-    return (
+  console.log('render Video')
+
+  
+  return (
       <>
       <div className='container'>
       <div className="pic">
-      <img src={`http://placeimg.com/160/90/${id}`} alt="Katherine Johnson" />
+      <img src={`https://picsum.photos/id/${id}/160/90`} alt="Katherine Johnson" />
       </div>
       <div className="title">{title}</div>
-      {<div className="channel">{channel}{verified&& '✅' }</div>}
-      {/* {channelJSX} */}
+      <div className="channel">{channel} {verified && '✅'} </div>
       <div className="views">
         {views} views <span>.</span> {time}
       </div>
