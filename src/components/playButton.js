@@ -1,6 +1,7 @@
 import './playButton.css'
-function playButton({message,children,onPlay,onPause}){
-     let playing = false;
+import { useState } from 'react';
+function PlayButton({message,children,onPlay,onPause}){
+     const [playing, setPlaying] = useState(false);
 
   function handleClick(e){
   //  console.log(e);
@@ -11,14 +12,14 @@ function playButton({message,children,onPlay,onPause}){
     
     else onPlay();
 
-    playing = !playing
+    setPlaying(!playing);
   }
 
     return(
       <>
-        <button onClick = {handleClick}>{children}</button>
+        <button onClick = {handleClick}>{children} : {playing ? '>': '||' }</button>
       </>
     )
 }
 
-export default playButton
+export default PlayButton
